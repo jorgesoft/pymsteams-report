@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import requests
 import sys
-sys.path.insert(0, './') #change for config path
+sys.path.insert(0, '<>') #change for config path
 from methods.sendTeams import sendTeams
 from methods.check_service import check_service
 from datetime import datetime
@@ -13,8 +13,8 @@ now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 def main():
-    for x in config.services:
-        check_service(x, config.services.get(x))
+    for service in config.services:
+        check_service(service, config.services.get(service))
 
     if config.errors == 0:
         sendTeams(config.reportHook, dt_string, config.upServices)

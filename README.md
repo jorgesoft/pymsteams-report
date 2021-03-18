@@ -33,7 +33,7 @@ Build the docker image with this command
 docker build -t pymsteams-report .
 ```
 
-And create a container with this command 
+And create a container with this command  
 
 ```
 docker run -it --rm --name running-pymsteams-report pymsteams-report

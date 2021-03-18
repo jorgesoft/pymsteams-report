@@ -22,7 +22,7 @@ def main():
             sendTeams(config.reportHook, dt_string, config.upServices)
         time.sleep(config.timer)
         config.upServices = []
-        config.errors = []
+        config.errors = 0
 
 if __name__ == "__main__":
     main()

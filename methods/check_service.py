@@ -15,13 +15,11 @@ def check_service(service, url):
     serviceName = service
     global errors
     try:
-        url = requests.get(url, verify=False, timeout=10)
+        url = requests.get(url, verify=False, timeout=60)
         status = url.status_code
         if status == 200:
             print("{} is up. Code: {}".format(service, status))
             config.upServices.append(service)
-        elif url == None:
-            print('No response')
         else:
             print("ALERT! {} IS DOWN. CODE: {}".format(service, status))
             config.errors += 1

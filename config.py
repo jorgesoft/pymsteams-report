@@ -8,11 +8,11 @@ services = {
   "NY State COVID-19" : "https://react.jorgedemo.com"
   }
 
-#time to repeat the test
-timer = 60
+#time to repeat the test 
+timer = 60 
 
-#time to wait for response
-wait_time = 60
+#time to wait for response 
+wait_time = 60 
 
 
 #DO NOT CHANGE, left in here for other methods to access

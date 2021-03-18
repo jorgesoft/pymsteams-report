@@ -36,7 +36,7 @@ docker build -t pymsteams-report .
 And create a container with this command  
 
 ```
-docker run -it --rm --name running-pymsteams-report pymsteams-report
+docker run -d --rm --name running-pymsteams-report pymsteams-report
 ```
 
 ## Outputs

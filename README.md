@@ -7,7 +7,8 @@ Set up two webhooks in a MS Teams channel, one for All Ok report and one for err
 
 ##### https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook 
 
-Add the webhooks URL and the sites that you want to monitor in the [config.py](https://github.com/gorj3/pymsteams-report/blob/master/config.py) file. You can also edit the timers here.
+Add the webhooks URL and the sites that you want to monitor in the [config.py](https://github.com/gorj3/pymsteams-report/blob/master/config.py) file. 
+You can also edit the timers here.
 
 ```
 # place weebHook links inbtween the ""

@@ -5,7 +5,7 @@ import config #imports variables from config.py file
 
 def sendTeams(reportHook, date, services):
     #channel URL
-    teamsURL = reportHook
+    teamsURL = config.reportHook
     myTeamsMessage = pymsteams.connectorcard(teamsURL)
     myTeamsMessage.title("Test Report")
     myTeamsMessage.text("Test run at " + str(date))

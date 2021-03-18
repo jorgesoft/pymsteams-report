@@ -18,13 +18,13 @@ def check_service(service, url):
         url = requests.get(url, verify=False, timeout=config.wait_time)
         status = url.status_code
         if status == 200:
-            print("{} is up. Code: {}".format(service, status))
+            #print("{} is up. Code: {}".format(service, status))
             config.upServices.append(service)
         else:
-            print("ALERT! {} IS DOWN. CODE: {}".format(service, status))
+            #print("ALERT! {} IS DOWN. CODE: {}".format(service, status))
             config.errors += 1
             sendDownCode(config.errorHook, service, dt_string, status)
     except Exception as error:
-        print(error)
+        #print(error)
         config.errors += 1
         sendError(config.errorHook, service, dt_string, error)

@@ -20,8 +20,9 @@ def main():
 
         if config.errors == 0:
             sendTeams(config.reportHook, dt_string, config.upServices)
-        time.sleep(60)
+        time.sleep(config.timer)
         config.upServices = []
+        config.errors = []
 
 if __name__ == "__main__":
     main()

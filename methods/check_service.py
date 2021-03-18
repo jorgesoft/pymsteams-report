@@ -15,7 +15,7 @@ def check_service(service, url):
     serviceName = service
     global errors
     try:
-        url = requests.get(url, verify=False, timeout=60)
+        url = requests.get(url, verify=False, timeout=config.wait_time)
         status = url.status_code
         if status == 200:
             print("{} is up. Code: {}".format(service, status))

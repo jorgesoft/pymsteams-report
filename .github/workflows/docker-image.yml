@@ -13,13 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+    - name: Checkout
+      uses: actions/checkout@v2
+  
     - name: Add report webhook
       run: echo 'reportHook = ${{ secrets.REPORTHOOK }}' >> config.py
 
     - name: Add error webhook
       run: echo 'errorHook = ${{ secrets.ERRORHOOK }}' >> config.py
 
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Set up QEMU
+      run: cat config.py

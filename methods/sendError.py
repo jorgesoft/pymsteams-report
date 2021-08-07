@@ -1,11 +1,8 @@
 import pymsteams
-#import sys
-#sys.path.insert(0, '<>')#change for config path
-import config #imports variables from config.py file
 
 def sendError(errorHook, service, date, error):
     #channel URL
-    teamsURL = config.errorHook
+    teamsURL = errorHook
     myTeamsMessage = pymsteams.connectorcard(teamsURL)
     myTeamsMessage.title("TEST REPORT ERROR FOR " + str(service))
     myTeamsMessage.text("Test run at " + str(date))

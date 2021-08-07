@@ -13,16 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+    - name: Add report webhook
+      run: echo 'reportHook = ${{ secrets.REPORTHOOK }}' >> config.py
+
+    - name: Add error webhook
+      run: echo 'errorHook = ${{ secrets.ERRORHOOK }}' >> config.py
+
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-
-    - uses: DamianReeves/write-file-action
-    - name: Add Teams webhooks
-    - with:
-        path: ${{ env.home}}/config.py
-        contents: |
-          echo "reportHook = 'https'""
-          echo "errorHook = 'https'"
-        write-mode: append
-

@@ -1,6 +1,6 @@
 #weebHook links
-reportHook = ""
-errorHook = ""
+#reportHook = ""
+#errorHook = ""
 
 #list of services and URLs to send the get request test
 services = {

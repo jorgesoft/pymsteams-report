@@ -16,3 +16,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
+    - uses: DamianReeves/write-file-action
+    - name: Add Teams webhooks
+    - with:
+        path: ${{ env.home}}/config.py
+        contents: |
+          echo "reportHook = 'https'""
+          echo "errorHook = 'https'"
+        write-mode: append
+

@@ -3,8 +3,8 @@ import requests
 from methods.sendTeams import sendTeams
 from methods.sendDownCode import sendDownCode
 from methods.sendError import sendError
-import sys
-sys.path.insert(0, '<>')#change for config path
+#import sys
+#sys.path.insert(0, '<>')#change for config path
 import config #imports variables from config.py file
 
 #creates data and time

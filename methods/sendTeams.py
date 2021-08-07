@@ -1,11 +1,8 @@
 import pymsteams
-import sys
-sys.path.insert(0, '<>')#change for config path
-import config #imports variables from config.py file
 
 def sendTeams(reportHook, date, services):
     #channel URL
-    teamsURL = config.reportHook
+    teamsURL = reportHook
     myTeamsMessage = pymsteams.connectorcard(teamsURL)
     myTeamsMessage.title("Test Report")
     myTeamsMessage.text("Test run at " + str(date))

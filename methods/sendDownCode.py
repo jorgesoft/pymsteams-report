@@ -1,6 +1,6 @@
 import pymsteams
-import sys
-sys.path.insert(0, '<>')#change for config path
+#import sys
+#sys.path.insert(0, '<>')#change for config path
 import config #imports variables from config.py file
 
 def sendDownCode(errorHook, service, date, status):

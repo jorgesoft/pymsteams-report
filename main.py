@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 import requests
-import sys
-sys.path.insert(0, '<>') #change for config path
 from methods.sendTeams import sendTeams
 from methods.check_service import check_service
 from datetime import datetime

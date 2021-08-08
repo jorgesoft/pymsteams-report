@@ -23,8 +23,14 @@ jobs:
         REPORTHOOK: ${{ secrets.REPORTHOOK }}
         ERRORHOOK: ${{ secrets.ERRORHOOK }}
       run: |
-        echo $REPORTHOOK
-        echo $ERRORHOOK
+        echo $REPORTHOOK >> config.py
+        echo $ERRORHOOK >> config.py
+        
+    - uses: actions/upload-artifact@v2
+      name: Export config
+      with:
+        name: config.py
+        path: config.py
 
     -  name: Set up QEMU
        uses: docker/setup-qemu-action@v1

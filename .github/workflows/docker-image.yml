@@ -16,12 +16,15 @@ jobs:
     
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Add report webhook
-      run: echo ${{ secrets.REPORTHOOK }} >> config.py
-
-    - name: Add error webhook
-      run: echo ${{ secrets.ERRORHOOK }} >> config.py
+      
+    - name: Pass hook secrets
+      shell: bash
+      env:
+        REPORTHOOK: ${{ secrets.REPORTHOOK }}
+        ERRORHOOK: ${{ secrets.ERRORHOOK }}
+      run: |
+        echo $REPORTHOOK >> config.py
+        echo $ERRORHOOK >> config.py
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)

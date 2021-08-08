@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-  
-    - name: Add report webhook
-      run: echo 'reportHook = ${{ secrets.REPORTHOOK }}' >> config.py
-
-    - name: Add error webhook
-      run: echo 'errorHook = ${{ secrets.ERRORHOOK }}' >> config.py
+    - name: Pass hook secrets
+      shell: bash
+      env:
+        REPORTHOOK: ${{ secrets.REPORTHOOK }}
+        ERRORHOOK: ${{ secrets.ERRORHOOK }}
+      run: |
+        echo 'reportHook = $REPORTHOOK' >> config.py
+        echo 'errorHook = $ERRORHOOK' >> config.py
 
     - name: Set up QEMU
       run: cat config.py

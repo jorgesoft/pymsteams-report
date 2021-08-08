@@ -23,8 +23,8 @@ jobs:
         REPORTHOOK: ${{ secrets.REPORTHOOK }}
         ERRORHOOK: ${{ secrets.ERRORHOOK }}
       run: |
-        echo $REPORTHOOK | base64 -d >> config.py
-        echo $ERRORHOOK | base64 -d >> config.py
+        echo $REPORTHOOK
+        echo $ERRORHOOK
 
     -  name: Set up QEMU
        uses: docker/setup-qemu-action@v1

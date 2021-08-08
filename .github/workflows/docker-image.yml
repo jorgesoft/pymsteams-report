@@ -13,14 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Pass hook secrets
-      shell: bash
-      env:
-        REPORTHOOK: ${{ secrets.REPORTHOOK }}
-        ERRORHOOK: ${{ secrets.ERRORHOOK }}
-      run: |
-        echo 'reportHook = $REPORTHOOK' >> config.py
-        echo 'errorHook = $ERRORHOOK' >> config.py
+    
+    - name: Checkout
+      uses: actions/checkout@v2
 
-    - name: Set up QEMU
+    - name: Add report webhook
+      run: echo 'reportHook = ${{ secrets.REPORTHOOK }}' >> config.py
+
+    - name: Add error webhook
+      run: echo 'errorHook = ${{ secrets.ERRORHOOK }}' >> config.py
+
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      
+    - name: Show config settings
       run: cat config.py

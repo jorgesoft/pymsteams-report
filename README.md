@@ -1,5 +1,7 @@
 # pymsteams-report 2.0
-Python application to report URL status to MS Teams, running in a docker container, and using [pymsteams](https://pypi.org/project/pymsteams/)
+Python application to report URL status to MS Teams using [pymsteams](https://pypi.org/project/pymsteams/).
+
+GitHub Actions builds a Docker image and push it to https://hub.docker.com/r/gorje6/pymsteams-report.
 
 ## How to use
 
